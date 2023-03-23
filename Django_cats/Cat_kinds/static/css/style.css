@@ -1,0 +1,15 @@
+.main_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+@media (max-width: 400px) {
+  .main_container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6);
+  }
+  .container1 {
+    margin: 0;
+  }
+}
+

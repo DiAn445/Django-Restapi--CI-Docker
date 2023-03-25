@@ -13,5 +13,5 @@ RUN pip install -r /Dj/requirements.txt
 
 COPY . /Dj/
 
-#EXPOSE 8000
-#CMD ["python", "./Django_cats/manage.py", "runserver", "0.0.0.0:8000"]
+EXPOSE 8000
+CMD ["python", "./Django_cats/manage.py", "runserver", "0.0.0.0:8000"]

@@ -1,11 +1,11 @@
-version: '3.7'
-
-
-services:
-  web:
-    build: .
-    command: python ./Django_cats/manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/Dj/
-    ports:
-      - 8000:8000
+#version: '3.7'
+#
+#
+#services:
+#  web:
+#    build: .
+#    command: python ./Django_cats/manage.py runserver 0.0.0.0:8000
+#    volumes:
+#      - .:/Dj/
+#    ports:
+#      - 8000:8000

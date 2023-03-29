@@ -1,7 +1,14 @@
+from django.contrib.auth import logout, login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.views import LoginView
 from django.http import HttpResponse, HttpRequest
-from django.shortcuts import render
-from .models import *
+from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
 from django.views.decorators.csrf import csrf_protect
+from django.views.generic import CreateView
+from .forms import RegisterUserForm, LogInUserForm
+from .utils import *
 
 
 @csrf_protect
@@ -26,10 +33,38 @@ def index(request):
     return render(request, 'cats/index.html', context=context)
 
 
-@csrf_protect
+@login_required(login_url='/admin')
 def about(request):
     return render(request, 'cats/about.html', {'Title': 'Anya'})
 
 
 def show_post(request, post_id):
     return HttpResponse(f"card num: {post_id}")
+
+
+class RegisterUser(CreateView):
+    form_class = RegisterUserForm
+    template_name = 'cats/sign_up.html'
+    success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        user = form.save()
+        login(self.request, user)
+        return redirect('home')
+
+
+class LogInUser(LoginView):
+    form_class = LogInUserForm
+    template_name = 'cats/sign_in.html'
+
+    def get_success_url(self):
+        return reverse_lazy('home')
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('sign_in')
+
+
+class GetCat(LoginRequiredMixin):
+    login_url = reverse_lazy('/admin/')

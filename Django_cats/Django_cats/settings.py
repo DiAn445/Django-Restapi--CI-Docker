@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from Django_cats.secret import hidden_key
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -20,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d3f&^lr1hvb5zrgiytz28z6^=vvpl(sip39n1$2wo1f**p(z%$'
+SECRET_KEY = hidden_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

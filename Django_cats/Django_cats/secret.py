@@ -1,0 +1,1 @@
+hidden_key = 'django-insecure-d3f&^lr1hvb5zrgiytz28z6^=vvpl(sip39n1$2wo1f**p(z%$'

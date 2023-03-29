@@ -1,0 +1,17 @@
+{% extends 'cats/base.html' %}
+
+{% block content %}
+<h1>{{title}}</h1>
+
+<center>
+    <form method="post" >
+        {% csrf_token %}
+        {% for i in form %}
+        <p><label class="form-label" style="display: grid" for="{{ i.id_for_label }}">{{ i.label }}: </label>{{ i }}</p>
+        <div class="form-error">{{ i.errors }}</div>
+        {% endfor %}
+        <button type="submit">Sign up</button>
+    </form>
+</center>
+
+{% endblock %}

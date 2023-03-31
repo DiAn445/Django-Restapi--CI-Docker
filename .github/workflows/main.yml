@@ -1,6 +1,6 @@
 name: Django_cats
 run-name: ${{ github.actor }} is testing at the mom
-on: [pull request]
+on: [pull_request]
 jobs:
   run_unittests:
     runs_on: ubuntu-latest

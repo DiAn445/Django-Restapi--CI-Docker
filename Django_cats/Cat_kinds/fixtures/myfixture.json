@@ -1,0 +1,50 @@
+[
+  {
+    "model": "Cat_kinds.catkinds",
+    "pk": 1,
+    "fields": {
+      "british": "American",
+      "likes": 10
+    }
+  },
+  {
+    "model": "Cat_kinds.catkinds",
+    "pk": 2,
+    "fields": {
+      "british": "British",
+      "likes": 10
+    }
+  },
+  {
+    "model": "Cat_kinds.catkinds",
+    "pk": 3,
+    "fields": {
+      "british": "Siamese",
+      "likes": 10
+    }
+  },
+  {
+    "model": "Cat_kinds.catkinds",
+    "pk": 4,
+    "fields": {
+      "british": "Bengal",
+      "likes": 10
+    }
+  },
+  {
+    "model": "Cat_kinds.catkinds",
+    "pk": 5,
+    "fields": {
+      "british": "Manul",
+      "likes": 10
+    }
+  },
+  {
+    "model": "Cat_kinds.catkinds",
+    "pk": 6,
+    "fields": {
+      "british": "Abyss",
+      "likes": 10
+    }
+  }
+]

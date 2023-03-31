@@ -13,7 +13,7 @@ class UnitTest(TestCase):
         db = CatKinds.objects.all()
         result = [i.likes for i in db]
         match result:
-            case result if min(result) > 0:
+            case result if min(result) < 0:
                 raise ValueError("Error: the result should be >= 0")
         self.assertEqual(True, True)    
 

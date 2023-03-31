@@ -21,6 +21,6 @@ jobs:
           pip install -r requirements.txt
       - name: Run Tests
         run: |
-          cd ./django_cats
+          cd /Django_cats
           python manage.py test
 

@@ -1,5 +1,5 @@
 name: Django_cats
-run-name: ${{ github.actor }} is testing at the mom
+run-name: ${{ github.actor }} is testing at the moment
 on: [pull_request]
 jobs:
   run_unittests:

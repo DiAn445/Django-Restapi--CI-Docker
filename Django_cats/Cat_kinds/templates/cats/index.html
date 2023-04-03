@@ -11,6 +11,9 @@
         <p class="card-text">amount of likes: <b>{{bengal}}</b></p>
         <a href="https://en.wikipedia.org/wiki/Bengal_cat" class="btn btn-primary">Info</a>
         <form  action="" method="POST"> {% csrf_token %} <button type="submit" name="bengal" class="btn btn-success">Like</button></form>
+        {% if request.user.is_authenticated %}
+        <form  action="{% url 'add_to_cart' 4 %}" method="POST" > {% csrf_token %} <button type="submit" name="bengal" class="btn btn-success" style="background-color: red">Get cat</button></form>
+        {% endif %}
       </div>
     </div></p>
 
@@ -21,6 +24,9 @@
         <p class="card-text">amount of likes: <b>{{british}}</b></p>
         <a href="https://en.wikipedia.org/wiki/British_Shorthair" class="btn btn-primary">Info</a>
         <form  action="" method="POST"> {% csrf_token %} <button type="submit" name="british" class="btn btn-success">Like</button></form>
+        {% if request.user.is_authenticated %}
+        <form  action="{% url 'add_to_cart' 2 %}" method="POST" > {% csrf_token %} <button type="submit" name="bengal" class="btn btn-success" style="background-color: red">Get cat</button></form>
+        {% endif %}
       </div>
     </div></p>
 
@@ -31,6 +37,9 @@
         <p class="card-text">amount of likes: <b>{{siamese}}</b></p>
         <a href="https://en.wikipedia.org/wiki/Siamese_cat" class="btn btn-primary">Info</a>
         <form  action="" method="POST"> {% csrf_token %} <button type="submit" name="siamese" class="btn btn-success">Like</button></form>
+        {% if request.user.is_authenticated %}
+        <form  action="{% url 'add_to_cart' 3 %}" method="POST" > {% csrf_token %} <button type="submit" name="bengal" class="btn btn-success" style="background-color: red">Get cat</button></form>
+        {% endif %}
       </div>
     </div></p>
   </div>
@@ -42,6 +51,9 @@
         <p class="card-text">amount of likes: <b>{{american}}</b></p>
         <a href="https://en.wikipedia.org/wiki/American_Shorthair" class="btn btn-primary">Info</a>
         <form  action="" method="POST"> {% csrf_token %} <button type="submit" name="american" class="btn btn-success">Like</button></form>
+        {% if request.user.is_authenticated %}
+        <form  action="{% url 'add_to_cart' 1 %}" method="POST" > {% csrf_token %} <button type="submit" name="bengal" class="btn btn-success" style="background-color: red">Get cat</button></form>
+        {% endif %}
       </div>
     </div></p>
 
@@ -52,6 +64,9 @@
         <p class="card-text">amount of likes: <b>{{manul}}</b></p>
         <a href="https://en.wikipedia.org/wiki/Pallas%27s_cat" class="btn btn-primary">Info</a>
         <form  action="" method="POST"> {% csrf_token %} <button type="submit" name="manul" class="btn btn-success">Like</button></form>
+        {% if request.user.is_authenticated %}
+        <form  action="{% url 'add_to_cart' 5 %}" method="POST" > {% csrf_token %} <button type="submit" name="bengal" class="btn btn-success" style="background-color: red">Get cat</button></form>
+        {% endif %}
       </div>
     </div></p>
 
@@ -62,6 +77,9 @@
         <p class="card-text">amount of likes: <b>{{abyss}}</b></p>
         <a href="https://en.wikipedia.org/wiki/Abyssinian_cat" class="btn btn-primary">Info</a>
         <form  action="" method="POST"> {% csrf_token %} <button type="submit" name="abyss" class="btn btn-success">Like</button></form>
+        {% if request.user.is_authenticated %}
+        <form  action="{% url 'add_to_cart' 6 %}" method="POST" > {% csrf_token %} <button type="submit" name="bengal" class="btn btn-success" style="background-color: red">Get cat</button></form>
+        {% endif %}
       </div>
     </div></p>
   </div>

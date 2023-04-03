@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.views.decorators.csrf import csrf_protect
+from django.contrib.auth.models import User
 
 
 class CatKinds(models.Model):
@@ -17,6 +18,13 @@ class CatKinds(models.Model):
         ordering = ['likes', 'british']
         verbose_name = 'Cat kinds'
         verbose_name_plural = 'Cat kinds'
+
+
+class Cart(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    products = models.ManyToManyField(CatKinds)
+
+
 
 
 

@@ -1,0 +1,16 @@
+{% extends 'cats/base.html' %}
+
+{% block content %}
+    <h1>Basket</h1>
+    {% if cart.products.all %}
+        <ul>
+        {% for product in cart.products.all %}
+            <li>{{ product.british }}</li>
+            <form  action="{% url 'remove_from_cart' product.id %}" method="POST" > {% csrf_token %} <button type="submit" name="bengal" class="btn btn-success" style="background-color: red">Remove cat</button></form>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <b><p>Your basket is empty.</p></b>
+    {% endif %}
+
+{% endblock %}

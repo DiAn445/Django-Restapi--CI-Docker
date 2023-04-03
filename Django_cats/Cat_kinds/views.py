@@ -9,6 +9,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.views.generic import CreateView
 from .forms import RegisterUserForm, LogInUserForm
 from .utils import *
+from .models import Cart
 
 
 @csrf_protect
@@ -66,5 +67,22 @@ def logout_user(request):
     return redirect('sign_in')
 
 
-class GetCat(LoginRequiredMixin):
-    login_url = reverse_lazy('/admin/')
+def cart(request):
+    cart, created = Cart.objects.get_or_create(user=request.user)
+    return render(request, 'cats/cart.html', {'cart': cart})
+
+
+def add_to_cart(request, product_id):
+    product = CatKinds.objects.get(id=product_id)
+    cart, created = Cart.objects.get_or_create(user=request.user)
+    cart.products.add(product)
+    return redirect('cart')
+
+
+def remove_from_cart(request, product_id):
+    product = CatKinds.objects.get(id=product_id)
+    cart = Cart.objects.get(user=request.user)
+    cart.products.remove(product)
+    return redirect('cart')
+
+

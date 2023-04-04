@@ -1,7 +1,7 @@
 from django.urls import path
 from Cat_kinds.views import *
 from django.views.generic.base import RedirectView
-from .views import add_to_cart, remove_from_cart, cart
+from .views import add_to_cart, remove_from_cart, cart, CatsApiView
 
 urlpatterns = [
     path('', index, name='home'),
@@ -13,5 +13,6 @@ urlpatterns = [
     path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico', permanent=True)),
     path('cart/', cart, name='cart'),
     path('add-to-cart/<int:product_id>/', add_to_cart, name='add_to_cart'),
-    path('remove-from-cart/<int:product_id>/', remove_from_cart, name='remove_from_cart')
+    path('remove-from-cart/<int:product_id>/', remove_from_cart, name='remove_from_cart'),
+    path('api/v1/cat_kinds/', CatsApiView.as_view())
 ]

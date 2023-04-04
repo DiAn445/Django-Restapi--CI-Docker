@@ -26,7 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Cat_kinds.apps.CatKindsConfig'
+    'Cat_kinds.apps.CatKindsConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

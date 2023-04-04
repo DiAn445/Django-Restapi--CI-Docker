@@ -7,9 +7,11 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.decorators.csrf import csrf_protect
 from django.views.generic import CreateView
+from .serializers import CatsSerializer
 from .forms import RegisterUserForm, LogInUserForm
 from .utils import *
 from .models import Cart
+from rest_framework import generics
 
 
 @csrf_protect
@@ -84,5 +86,12 @@ def remove_from_cart(request, product_id):
     cart = Cart.objects.get(user=request.user)
     cart.products.remove(product)
     return redirect('cart')
+
+
+class CatsApiView(generics.ListAPIView):
+    queryset = CatKinds.objects.all()
+    serializer_class = CatsSerializer
+
+
 
 

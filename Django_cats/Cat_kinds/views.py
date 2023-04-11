@@ -12,6 +12,7 @@ from .forms import RegisterUserForm, LogInUserForm
 from .utils import *
 from .models import Cart
 from rest_framework import generics, viewsets
+from rest_framework.permissions import IsAdminUser
 
 
 @csrf_protect
@@ -91,6 +92,7 @@ def remove_from_cart(request, product_id):
 class CatsViewSet(viewsets.ModelViewSet):
     queryset = CatKinds.objects.all()
     serializer_class = CatsSerializer
+    permission_classes = (IsAdminUser, )
 
 
 

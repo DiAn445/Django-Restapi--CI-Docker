@@ -4,7 +4,7 @@ from django.views.generic.base import RedirectView
 from .views import add_to_cart, remove_from_cart, cart, CatsViewSet
 from rest_framework import routers
 
-router = routers.SimpleRouter()
+router = routers.DefaultRouter()
 router.register(r'cat_kinds', CatsViewSet)
 
 urlpatterns = [

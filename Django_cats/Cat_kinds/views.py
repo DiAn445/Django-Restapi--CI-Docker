@@ -11,7 +11,7 @@ from .serializers import CatsSerializer
 from .forms import RegisterUserForm, LogInUserForm
 from .utils import *
 from .models import Cart
-from rest_framework import generics
+from rest_framework import generics, viewsets
 
 
 @csrf_protect
@@ -88,10 +88,9 @@ def remove_from_cart(request, product_id):
     return redirect('cart')
 
 
-class CatsApiView(generics.ListAPIView):
+class CatsViewSet(viewsets.ModelViewSet):
     queryset = CatKinds.objects.all()
     serializer_class = CatsSerializer
-
 
 
 
